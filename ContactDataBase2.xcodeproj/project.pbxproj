@@ -416,6 +416,7 @@
 				B021926419E34A20006142B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B021926519E34A20006142B6 /* Build configuration list for PBXNativeTarget "ContactDataBase2Tests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +425,7 @@
 				B021926719E34A20006142B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -43,10 +43,17 @@
     
         [newContact setValue: self.phone.text forKey:@"phone"];
     
+        [newContact setValue: self.Address.text forKey:@"Address"];
+
+        [newContact setValue: self.notes.text forKey:@"notes"];
+    
         //Clear testfields after save
         self.fullname.text = @"";
         self.email.text = @"";
         self.phone.text = @"";
+        self.Address.text = @"";
+        self.notes.text = @"";
+    
     NSError *error;
     //Save
     [context save:&error];
@@ -74,13 +81,15 @@ NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Contact" 
     NSArray *objects = [context executeFetchRequest: request error:&error];
     
     if ([objects count] == 0) {
-        self.status.text = @"No matches";
+        self.status.text = @"The who?!";
     } else {
         matches = objects[0];
         self.fullname.text = [matches valueForKey: @"fullname"];
         self.email.text = [matches valueForKey: @"email"];
         self.phone.text = [matches valueForKey: @"phone"];
-        self.status.text = [NSString stringWithFormat: @"%lu matches found", (unsigned long)[objects count]];
+        self.Address.text = [matches valueForKey: @"Address"];
+        self.notes.text = [matches valueForKey: @"notes"];
+        self.status.text = [NSString stringWithFormat: @"Found %lu match(es)!", (unsigned long)[objects count]];
     }
 }
 @end
